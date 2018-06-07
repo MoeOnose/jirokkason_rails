@@ -73,8 +73,4 @@ gem 'colorize_unpermitted_parameters'
 # ターミナルで許可されてないパラムスを色変えて表示
 
 
-
-gem 'social-share-button'
-# snsシェアボタン
-
 gem 'kaminari'
