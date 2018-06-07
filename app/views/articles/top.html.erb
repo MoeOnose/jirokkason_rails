@@ -1,2 +1,10 @@
 <h1>Articles#top</h1>
 <p>Find me in app/views/articles/top.html.erb</p>
+
+
+<!--  ボタン -->
+
+
+<%= form_tag :action => 'create' %>
+
+<%= tag :input, { "type" => "submit", "name" => "send_action", "value" => ('save') } %>
