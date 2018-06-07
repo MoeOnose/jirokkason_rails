@@ -1,6 +1,6 @@
-class CreateFavarites < ActiveRecord::Migration[5.1]
+class CreateFavorites < ActiveRecord::Migration[5.1]
   def change
-    create_table :favarites do |t|
+    create_table :favorites do |t|
       t.integer :article_id
       t.integer :session_id
       t.timestamps

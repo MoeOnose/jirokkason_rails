@@ -4,23 +4,34 @@
 
 コピペ
 
-
+<br>
 
 
 
 タブ
 
-
+<br>
 
 投稿
 
 
 <%= link_to "articles", articles_path %>
 
+<br>
 
 
+<%= form_for @article do |f|%>
 
+	<%= f.hidden_field :title, :value =>"タイトル" %>
 
+	<%= f.hidden_field :body, :value =>"コピペ" %>
+	<%= f.text_field :user_name %>
+	<%= f.password_field :password %>
+	<%= f.submit "artcle" %>
+
+<% end -%>
+
+<br>
 シェア
 
 
@@ -38,7 +49,7 @@
 
 
 
-
+<br>
 
 
 
@@ -48,23 +59,23 @@
 
 <!-- FB後で！！！ -->
 <%= link_to('Share on Facebook', 'https://www.facebook.com/dialog/feed?
-                                  link=https://developers.facebook.com/docs/reference/dialogs/&
-                                  picture=http://fbrell.com/f8.jpg&
-                                  name=Facebook%20Dialogs&
-                                  caption=Reference%20Documentation&
-                                  description=Using%20Dialogs%20to%20interact%20with%20users.&
-                                  redirect_uri=https://mighty-lowlands-6381.herokuapp.com/',
-                                  :target => :blank) %>
+	link=https://developers.facebook.com/docs/reference/dialogs/&
+	picture=http://fbrell.com/f8.jpg&
+	name=Facebook%20Dialogs&
+	caption=Reference%20Documentation&
+	description=Using%20Dialogs%20to%20interact%20with%20users.&
+	redirect_uri=https://mighty-lowlands-6381.herokuapp.com/',
+	:target => :blank) %>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 
-<meta property="og:title" content="記事のタイトル" />
-<meta property="og:type" content="article" /> 
-<!-- トップページはwebsite、個別ページはarticle -->
-<meta property="og:description" content="記事の説明" />
+	<meta property="og:title" content="記事のタイトル" />
+	<meta property="og:type" content="article" /> 
+	<!-- トップページはwebsite、個別ページはarticle -->
+	<meta property="og:description" content="記事の説明" />
 <!-- <meta property="og:url" content="記事のURL" />
- -->
+-->
 <meta property="og:site_name" content="genejiro" />
 <meta property="og:locale" content=ja /> 
 <meta property="fb:app_id" content="391278084717491" />

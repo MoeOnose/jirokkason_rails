@@ -1,2 +1,153 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<h1>ここはコピペーーーーーーーー！</h1>
+
+<div>
+	<% @articles.each do |article| %>
+
+		<%=link_to article.title, article_path(article) %><br>
+
+		<%= article.body %><br>
+		<%= article.user_name %><br>
+		<%= article.created_at.strftime('%Y.%m.%d') %>
+
+		<!-- いいね -->
+
+			<a href="#">
+				<%= link_to article_favorites_path(article), method: :post do %>
+				<i class="fas fa-smile"></i>
+				<% end %>
+				<%= article.favorites.count %> 杯
+				
+			</a>
+
+
+
+		<!-- モーダル -->
+		<div id="orver">
+			<div id="wrap">
+				<div id="contents">
+					<a id="modal-open" class="button-link">削除</a>
+				</div>
+			</div> 
+		</div> 
+
+		<!-- ここからモーダルウィンドウ -->
+		<div id="modal-content">
+			<div id="modal-content-innar">
+				<!-- モーダルウィンドウのコンテンツ開始 -->
+				<p class="red bold">
+					<p>削除用のパスワードを入力してください</p>
+					<%= form_tag(article, :url => {:controller => :articles, :action => :destroy}, :method => :delete) do %>
+						<%= text_field_tag :password %>
+						<%= submit_tag "削除"%>
+					<% end %>
+
+					<p><a id="modal-close" class="button-link">閉じる</a></p>
+				</p>
+			</div>
+			<!-- モーダルウィンドウのコンテンツ終了 -->
+		</div>
+	<% end %>
+	<%= paginate @articles %>
+</div>
+
+
+
+<script type="text/javascript">
+
+
+		$(function(){
+			$("#modal-open").click(function(){
+//キーボード操作などにより、オーバーレイが多重起動するのを防止する
+$( this ).blur() ;	//ボタンからフォーカスを外す
+if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない (防止策1)
+//if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する (防止策2)
+//オーバーレイを出現させる
+$( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+$( "#modal-overlay" ).fadeIn( "slow" ) ;
+//コンテンツをセンタリングする
+centeringModalSyncer() ;
+//コンテンツをフェードインする
+$( "#modal-content" ).fadeIn( "slow" ) ;
+//[#modal-overlay]、または[#modal-close]をクリックしたら…
+$( "#modal-overlay,#modal-close" ).unbind().click( function(){
+//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+$( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+//[#modal-overlay]を削除する
+$('#modal-overlay').remove() ;
+} ) ;
+} ) ;
+} ) ;
+//リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+$( window ).resize( centeringModalSyncer ) ;
+//センタリングを実行する関数
+function centeringModalSyncer() {
+//画面(ウィンドウ)の幅、高さを取得
+var w = $( window ).width() ;
+var h = $( window ).height() ;
+// コンテンツ(#modal-content)の幅、高さを取得
+// jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+var cw = $( "#modal-content" ).outerWidth( {margin:true} );
+var ch = $( "#modal-content" ).outerHeight( {margin:true} );
+var cw = $( "#modal-content" ).outerWidth();
+var ch = $( "#modal-content" ).outerHeight();
+//センタリングを実行する
+$( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+}
+} ) ;
+
+		$(function(){
+			$("#modal-open").click(function(){
+ //キーボード操作などにより、オーバーレイが多重起動するのを防止する
+ $( this ).blur() ; //ボタンからフォーカスを外す
+ if( $( "#modal-overlay" )[0] ) return false ; //新しくモーダルウィンドウを起動しない (防止策1)
+ //if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する (防止策2)
+ 
+ //オーバーレイを出現させる
+ $( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+ $( "#modal-overlay" ).fadeIn( "slow" ) ;
+ 
+ //コンテンツをセンタリングする
+ centeringModalSyncer() ;
+ 
+ //コンテンツをフェードインする
+ $( "#modal-content" ).fadeIn( "slow" ) ;
+ 
+ //[#modal-overlay]、または[#modal-close]をクリックしたら…
+ $( "#modal-overlay,#modal-close" ).unbind().click( function(){
+
+ //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+ $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+
+ //[#modal-overlay]を削除する
+ $('#modal-overlay').remove() ;
+ 
+} ) ;
+ 
+} ) ;
+ 
+} ) ;
+
+ //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+ $( window ).resize( centeringModalSyncer ) ;
+ 
+ //センタリングを実行する関数
+ function centeringModalSyncer() {
+
+ //画面(ウィンドウ)の幅、高さを取得
+ var w = $( window ).width() ;
+ var h = $( window ).height() ;
+ 
+ // コンテンツ(#modal-content)の幅、高さを取得
+ // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+ var cw = $( "#modal-content" ).outerWidth(  );
+ var ch = $( "#modal-content" ).outerHeight( );
+ var cw = $( "#modal-content" ).outerWidth();
+ var ch = $( "#modal-content" ).outerHeight();
+ 
+ //センタリングを実行する
+ $( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+ 
+}
+
+} ) ;
+</script>
