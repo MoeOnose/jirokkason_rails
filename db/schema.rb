@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20180609152314) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "session_id"
   end
 
   create_table "chain_freqs", force: :cascade do |t|

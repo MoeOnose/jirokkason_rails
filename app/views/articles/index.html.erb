@@ -12,34 +12,27 @@
 		 		<div class="timeline">
 		 			<!-- 個別ポスト部分。-->
 		 			
-						<% @articles.each do |article| %>
+					<% @articles.each do |article| %>
 						<div class="post">
-							<%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
-							<%= article.body %><br>
-							<%= article.user_name %><br>
-
-							<!-- いいね -->
+							<p class="index_p">作成時刻: </p><%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
+							<p class="index_p">架空のコピペ本文: </p><%= article.body %><br>
+							<p class="index_p">ニックネーム: </p><%= article.user_name %><br>
 							<!---いいね部分。-->
-
-							<%#= link_to article_favorites_path(article_id: article.id), method: :post do %>
-							<% if session[:id] == nil %>
-							<%#= binding.pry %>
-							<%= link_to article_favorites_path(article_id: article.id), method: :post do %>
-							<div class="share_archive_fav"></div>
-							<% end %>
-							<% if article.favorite %>
-							<%= article.favorite.count %> 杯
-							<% end %>
-
+							<% if article.favorited_by?(session[:id]) %>
+								<%= link_to article_favorites_path(article_id: article.id), method: :delete do %>
+									<div class="share_archive"></div>
+								<% end %>
+								<p class="index_p"><%= article.favorites.count %> 杯</p>
 							<% else %>
-							<%= link_to article_favorites_path(article_id: article.id), method: :delete do %>
-							<div class="share_archive"></div>
+								<%= link_to article_favorites_path(article_id: article.id), method: :post do %>
+									<div class="share_archive_fav"></div>
+								<% end %>
+								<% if article.favorites %>
+									<p class="index_p"><%= article.favorites.count %> 杯 </p>
+								<% else %>
+									<p class="index_p">0 杯 </p>
+								<% end %>
 							<% end %>
-							<% if article.favorite %>
-							<%= article.favorite.count %> 杯
-							<% end %>
-
-							<% end -%>
 
 
 							<!-- モーダル -->
@@ -58,8 +51,8 @@
 									<p class="red bold">
 										<p>削除用のパスワードを入力してください</p>
 										<%= form_tag(article, :url => {:controller => :articles, :action => :destroy}, :method => :delete) do %>
-										<%= text_field_tag :password %>
-										<%= submit_tag "削除"%>
+											<%= text_field_tag :password %>
+											<%= submit_tag "削除"%>
 										<% end %>
 
 										<p><a id="modal-close" class="button-link">閉じる</a></p>
