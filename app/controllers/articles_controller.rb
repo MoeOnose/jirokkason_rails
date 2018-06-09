@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def answer
 		  # ここからpythonにapi通信
-	@jiro_copype = `python3 ../jirokkason_python/main.py`
+	@jiro_copype = `python3 ./main.py`
   	@article = Article.new
   end
 

@@ -11,6 +11,7 @@
  		<div class="timeline_detail">
  			<!-- 個別ポスト部分。-->
  			<div class="post_detail">
+			 	<%= @article.created_at.strftime('%Y.%m.%d')%>
  				<%= label :body, @jiro_copype %>：
  				<br>
  				<%= @article.body%>
