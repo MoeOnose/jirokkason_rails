@@ -1,101 +1,103 @@
 
 
 
-		 <!--コンテンツ全て。 -->
-		<div class="contents_answer">
-		 <!-- リザルト画面主要部分。-->
-			<div class="page">
-			  <h2>完飲</h2>
-				<!---GIF部分。-->
-				<div class="image">
+<!--コンテンツ全て。 -->
+<div class="contents_answer">
+	<!-- リザルト画面主要部分。-->
+	<div class="page">
+		<h2>完飲</h2>
+		<!---GIF部分。-->
+		<div class="image">
+		</div>
+		<!---リザルト画面部分。-->
+		<div class="result">
+			<form>
+				<p>結果</p>
+				<div><%= simple_format @jiro_copype, class:"copype_text" %></div>
+			</form>
+		</div>
+
+		<!-- -------------tab----------------- -->
+		<div class="tabmenu">
+			<!-- tabボタン部分 -->
+			<ul>
+				<li id="left" class="selected">投稿</li>
+				<li id="right">共有</li>
+			</ul>
+			<!-- テクスト？ -->
+			<div class="tab">
+				<div class="left">
+					<%= form_for @article, :html => { :class => "form-group"} do |f|%>
+
+					<%= f.hidden_field :body, :value =>@jiro_copype %>
+
+					<label for="exampleInputEmail1">ニックネーム</label>
+					<%= f.text_field :user_name, class: "form-control"%><br>
+					<small id="emailHelp" class="form-text text-muted">削除用パスワードを入力してください</small>
+					<%= f.password_field :password, class: "form-control" %>
+					<%= f.submit "投稿",class: "btn btn-dark" %>
+
+
+					<% end -%>
 				</div>
-				<!---リザルト画面部分。-->
-				<div class="result">
-                    <form>
-                    	<p>結果</p>
-                    	<div><%= simple_format @jiro_copype, class:"copype_text" %></div>
-                    </form>
-				</div>
+				<div class="right">
 
-				<!-- -------------tab----------------- -->
-			    <div class="tabmenu">
-			    	<!-- tabボタン部分 -->
-			    	<ul>
-			    		<li id="left" class="selected">投稿</li>
-			    		<li id="right">共有</li>
-			    	</ul>
-			    	<!-- テクスト？ -->
-			    	<div class="tab">
-			    		<div class="left">
-			    			<%= form_for @article do |f|%>
+					<%= link_to "http://twitter.com/home?status=#{url_for(only_path: false)}" do %>
 
-	<%= f.hidden_field :body, :value =>@jiro_copype %>
-	<p>お名前</p>
-	<%= f.text_field :user_name, class: "form_field" %>
-	<p>削除用パスワード</p>
-	<%= f.password_field :password, class: "form_field" %>
-	<%= f.submit "アーカイブに保存" %>
-
-		<% end -%>
-			    		</div>
-			    		<div class="right">
-			    			
-<%= link_to "http://twitter.com/home?status=#{url_for(only_path: false)}" do %>
-
-<i class="fab fa-twitter-square fa-w-14 fa-5x" ></i>
-<% end -%>
+					<i class="fab fa-twitter-square fa-w-14 fa-5x" ></i>
+					<% end -%>
 
 
-<!-- 参考= link_to "tweet me", "http://twitter.com/home?status=#{@post.short_name} #{post_url(@post)}" -->
+					<!-- 参考= link_to "tweet me", "http://twitter.com/home?status=#{@post.short_name} #{post_url(@post)}" -->
 
-<%= link_to 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank  do%>
-<i class="fab fa-facebook-square fa-w-14 fa-5x"></i>
-<% end -%>
-
-
-			    		</div>
-			    	</div>
-			    </div>
-			    <!-- -----------------tab------------------ -->
+					<%= link_to 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank  do%>
+					<i class="fab fa-facebook-square fa-w-14 fa-5x"></i>
+					<% end -%>
 
 
-
-
-
-
-				<!---テクスト部分。-->
-				<div class="text">
-					<p class="success">
-						完飲成功....
-					</p>
-			    </div>
-
-
-
-
-
-				<!---ボタン部分。-->
-		        <div class="button">
-					<ul class="menu clearfix">
-						<li class="archive"><%= link_to "アーカイブ", articles_path %></li>
-						<li class="regenerator"><%= link_to "TOP", root_path %> </li>
-					</ul>
-			    </div>
-                <!---いいね部分。-->
-			    <div class="share">
 				</div>
 			</div>
 		</div>
+		<!-- -----------------tab------------------ -->
+
+
+
+
+
+
+		<!---テクスト部分。-->
+		<div class="text">
+			<p class="success">
+				完飲成功....
+			</p>
+		</div>
+
+
+
+
+
+		<!---ボタン部分。-->
+		<div class="button">
+			<ul class="menu clearfix">
+				<li class="archive"><%= link_to "アーカイブ", articles_path %></li>
+				<li class="regenerator"><%= link_to "TOP", root_path %> </li>
+			</ul>
+		</div>
+		<!---いいね部分。-->
+		<div class="share">
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 
 	$(window).on("load",function(){
- $("li").on("click",function(){
-    $("li.selected").removeClass("selected");
-    $(this).addClass("selected");
-    $(".tab div").hide();
-    $("." + this.id).show();
- });
-});
+		$("li").on("click",function(){
+			$("li.selected").removeClass("selected");
+			$(this).addClass("selected");
+			$(".tab div").hide();
+			$("." + this.id).show();
+		});
+	});
 </script>
 
