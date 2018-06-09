@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prefix1: MyText
+  prefix2: MyText
+  suffix: MyText
+  freq: 1
+
+two:
+  prefix1: MyText
+  prefix2: MyText
+  suffix: MyText
+  freq: 1
