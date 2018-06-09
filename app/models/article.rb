@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
-	has_one :favorite
+	has_many :favorites
 
-	# def favorited_by?(user)
-	# 	favorites.where(user_id: user.id).exists?
-	# end
+	def favorited_by?(session)
+		self.favorites.where(session_id: session).exists?
+	end
 end
