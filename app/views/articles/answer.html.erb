@@ -22,9 +22,7 @@
 			    </div>
 <%= form_for @article do |f|%>
 
-	<%= f.hidden_field :title, :value =>"タイトル" %>
-
-	<%= f.hidden_field :body, :value =>"コピペ" %>
+	<%= f.hidden_field :body, :value =>@jiro_copype %>
 	<%= f.text_field :user_name %>
 	<%= f.password_field :password %>
 	<%= f.submit "artcle" %>
