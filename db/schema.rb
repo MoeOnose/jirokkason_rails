@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180609075100) do
+ActiveRecord::Schema.define(version: 20180609152314) do
 
   create_table "articles", force: :cascade do |t|
     t.text "body"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180609075100) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "session_id"
   end
 
   create_table "chain_freqs", force: :cascade do |t|
@@ -31,9 +32,9 @@ ActiveRecord::Schema.define(version: 20180609075100) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "article_id"
-    t.integer "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "session_id"
   end
 
   create_table "sessions", force: :cascade do |t|
