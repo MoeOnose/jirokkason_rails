@@ -1,0 +1,9 @@
+		<!-- いいね -->
+
+			<a href="#">
+				<%= link_to article_favorites_path(article), method: :post do %>
+				<i class="fas fa-smile"></i>
+				<% end %>
+				<%= article.favorites.count %> 杯
+				
+			</a>

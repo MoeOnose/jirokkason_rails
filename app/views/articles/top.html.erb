@@ -1,14 +1,28 @@
-<h1>Articles#top</h1>
-<p>Find me in app/views/articles/top.html.erb</p>
-
-
-<!--  ボタン -->
-
-
-<%= form_tag :action => 'answer' %>
-
-<%= tag :input, { "type" => "submit", "name" => "send_action", "value" => ('save') } %>
-
-
-
-
+		<div class="contents">
+		 <!-- ジェネレーター主要部分。-->
+			<div class="page">
+				<!---GIF部分。-->
+				<div class="image">
+				</div>
+				<!---テクスト部分。-->
+				<div class="text">
+				    <hr>
+					<p>
+						二郎の架空コピペが自動生成できます。<br>
+						ジェネレートボタンを押して、その目で確かめてください
+					</p>
+			    </div>
+			    <!---白塗りテクスト部分。-->
+				<div class="blank">
+					<p>全ての二郎を愛する兵たちへ...</p>
+				</div>
+				<!---ボタン部分。-->
+		        <div class="button">
+					<ul class="menu clearfix">
+						<li class="archive"><%=link_to "アーカイブ", articles_path %></li>
+						<li class="generator"><%= link_to "ジェネレート", answer_articles_path, method: :post %>
+						</li>
+					</ul>
+			    </div>
+			</div>
+		</div>
