@@ -13,7 +13,6 @@ class FavoritesController < ApplicationController
 	  		redirect_to articles_path
 	end
 
-
 	def destroy
 		if session[:id]
 			@article = Article.find(params[:article_id])
