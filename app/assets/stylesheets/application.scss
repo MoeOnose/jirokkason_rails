@@ -13,6 +13,7 @@
 
  *= require_tree .
  *= require_self
+ *= require animate
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -40,7 +41,7 @@ h1,h2,h3,h4,h5,h6,p,body {
 
 header {
 	margin-bottom: 50px;
-	height: 40px;
+	// height: 40px;
 	min-width: 960px;
 }
 
@@ -79,20 +80,19 @@ header hr {
 
 .page {
     background-color: white;
-    padding: 80px 105px;
-    width: 800px;
+    padding: 10px 105px;
+    width: 900px;
     /*height: 90%!important;*/
     margin: 0 auto;
     margin-bottom: 200px !important;
-
 }
 
 h2 {
 	text-align: center;
-	font-size: 50px;
+	font-size: 40px;
 	background-color: white;
 	font-family: sans-serif;
-	line-height: 0px;
+	// line-height: 0px;
 }
 
 .head_text {
@@ -105,12 +105,12 @@ h2 {
 }
 
 .image  {
-	height: 0;
+	height: 270px;
 	padding-top: 260px;
 	background: url("jiro.gif") 0 0 no-repeat;
 	background-size: 500px 370px;
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-position: 50% 40%;
 	margin-top: 30px;
 
 }
@@ -141,7 +141,7 @@ textarea {
 .post {
 	font-size: 16px;
 	margin:30px auto;
-	// width: 699px;
+	width: 600px;
 	border: 3px dashed #000;
 	background-color: white;
 }
@@ -174,7 +174,7 @@ textarea {
 }
 
 .blank {
-	width: 960px;
+	// width: 960px;
 	height:50px;
 	text-align: center;
 	margin-top: 40px;
@@ -182,8 +182,9 @@ textarea {
 }
 
 .blank p {
+	font-style: italic;
+	text-align: right;
 	color: gray;
-	font-size: 40px;
     font-family: sans-serif;
 }
 
@@ -280,7 +281,7 @@ footer hr {
 
 .tabmenu li {
 	display: inline-block;
-	width: 120px;
+	// width: 120px;
 	padding: 10px 10px 5px;
 	cursor: pointer;
 	background-color: #4a4a4a;
