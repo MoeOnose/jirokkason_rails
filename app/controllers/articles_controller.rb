@@ -3,9 +3,8 @@ class ArticlesController < ApplicationController
   end
 
   def answer
-  	if params[:send_action]
-  		# ここからpythonにapi通信
- 	end
+		  # ここからpythonにapi通信
+	@jiro_copype = `python3 ../jirokkason_python/main.py`
   	@article = Article.new
   end
 
@@ -14,7 +13,7 @@ class ArticlesController < ApplicationController
   	article.save
   	favorite = article.build_favorite(count: 0)
   	favorite.save
-  	redirect_to articles_path
+	redirect_to articles_path
   end
 
   def index

@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180609022753) do
+ActiveRecord::Schema.define(version: 20180609075100) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.string "user_name"
     t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chain_freqs", force: :cascade do |t|
+    t.text "prefix1"
+    t.text "prefix2"
+    t.text "suffix"
+    t.integer "freq"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
