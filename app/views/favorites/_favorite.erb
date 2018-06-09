@@ -1,9 +1,21 @@
 		<!-- いいね -->
 
-			<a href="#">
-				<%= link_to article_favorites_path(article), method: :post do %>
+		<% if $favo_id == nil %>
+		<%#= binding.pry %>
+			<%= link_to article_favorites_path(article_id: article.id), method: :post, remote: true do %>
 				<i class="fas fa-smile"></i>
-				<% end %>
-				<%= article.favorites.count %> 杯
-				
-			</a>
+			<% end %>
+			<% if article.favorite %>
+				<%= article.favorite.count %> 杯
+			<% end %>
+
+		<% else %>
+			<%= link_to article_favorites_path(article_id: article.id), method: :delete, remote: true do %>
+				<i class="fas fa-smile"></i>
+			<% end %>
+			<% if article.favorite %>
+				<%= article.favorite.count %> 杯
+			<% end %>
+
+		<% end -%>
+

@@ -12,12 +12,14 @@ class ArticlesController < ApplicationController
   def create
   	article = Article.new(article_path)
   	article.save
+  	favorite = article.build_favorite(count: 0)
+  	favorite.save
   	redirect_to articles_path
-
   end
 
   def index
   	@articles = Article.page(params[:page]).per(10).reverse_order
+  	@favorite = Favorite.new
   end
 
   def show
@@ -26,7 +28,9 @@ class ArticlesController < ApplicationController
 
   def destroy
   	article = Article.find(params[:id])
+  	favorite = article.favorite
   	if article.password == params[:password]
+  		# favorite.delete
   		article.delete
   		redirect_to root_path
   	else

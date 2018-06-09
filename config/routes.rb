@@ -4,7 +4,7 @@ root 'articles#top'
 resources :articles, :except => [:new, :edit, :update] do
 	collection do
 		get 'top'
-		post 'answer'
+		get 'answer'
 	end
 	resource :favorites, :only => [:create, :destroy]
 end
