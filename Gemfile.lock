@@ -80,6 +80,7 @@ GEM
       term-ansicolor
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    csv (3.0.0)
     debug_inspector (0.0.3)
     erubi (1.7.1)
     execjs (2.7.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   colorize_unpermitted_parameters
+  csv
   faraday
   hirb
   jbuilder (~> 2.5)
