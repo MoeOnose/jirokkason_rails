@@ -1,26 +1,25 @@
-<h1>Articles#answer</h1>
-<p>Find me in app/views/articles/answer.html.erb</p>
 
-
-コピペ
-
-<br>
-
-
-
-タブ
-
-<br>
-
-投稿
-<%= simple_format @jiro_copype %>
-
-
-<%= link_to "articles", articles_path %>
-
-<br>
-
-
+		 <!--コンテンツ全て。 -->
+		<div class="contents_answer">
+		 <!-- リザルト画面主要部分。-->
+			<div class="page">
+			  <h2>完飲</h2>
+				<!---GIF部分。-->
+				<div class="image">
+				</div>
+				<!---リザルト画面部分。-->
+				<div class="result">
+                    <form>
+                    	<p>結果</p>
+                    	<textarea><%= simple_format @jiro_copype %></textarea>
+                    </form>
+				</div>
+				<!---テクスト部分。-->
+				<div class="text">
+					<p class="success">
+						完飲成功....
+					</p>
+			    </div>
 <%= form_for @article do |f|%>
 
 	<%= f.hidden_field :title, :value =>"タイトル" %>
@@ -31,6 +30,24 @@
 	<%= f.submit "artcle" %>
 
 <% end -%>
+				<!---ボタン部分。-->
+		        <div class="button">
+					<ul class="menu clearfix">
+						<li class="archive"><a href="#">アーカイブ</a></li>
+						<li class="regenerator"><a href="#">再ジェネレート</a></li>
+					</ul>
+			    </div>
+                <!---いいね部分。-->
+			    <div class="share">
+				</div>
+			</div>
+		</div>
+
+<%= link_to "articles", articles_path %>
+
+<br>
+
+
 
 <br>
 シェア
