@@ -373,11 +373,14 @@ body {
 @media screen and (min-width:375px) { 
 
 .text p {
-	margin-bottom: 100px;
+	margin: 0 0 100px 0;
 	padding: 25px;
 }
+.timeline {
+	margin: 100px 0!important;
+}
 .menu {
-	padding-bottom: 200px;
+	padding-bottom: 150px;
 }
 .menu li {
 	padding: 10px 20px;
@@ -386,10 +389,14 @@ body {
 	height: 450px;
     padding-top: 0;
     background-size: 700px 600px;
-    margin-top: 0px;
+    margin: 0 0 30px 0;
 }
 .form-group {
     margin-top: 20px;
+}
+.form-field {
+    width: 550px;
+    margin: 0 auto;
 }
 .page {
 	margin-top: 100px !important;
@@ -401,8 +408,23 @@ body {
 	padding-top: 50px;
 	font-size: 30px !important;
 }
+.share {
+	height: 100px;
+    margin-bottom: 50px;
+}
+.share_archive_fav {
+    /* float: right; */
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+}
+
 ul, ol {
     margin-top: 50px;
+}
+.post_detail {
+	width: 550px;
+    padding: 30px 20px;
 }
 }
 @media screen and (min-width:768px) and ( max-width:1024px) {
