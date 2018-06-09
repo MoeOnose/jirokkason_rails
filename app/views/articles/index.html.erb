@@ -14,11 +14,9 @@
 		 			
 		 				<% @articles.each do |article| %>
 					<div class="post">
-		 				<%=link_to article.title, article_path(article) %><br>
-
+		 				<%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article) %><br>
 		 				<%= article.body %><br>
 		 				<%= article.user_name %><br>
-		 				<%= article.created_at.strftime('%Y.%m.%d') %>
 
 		 				<!-- いいね -->
 		 	<!---いいね部分。-->

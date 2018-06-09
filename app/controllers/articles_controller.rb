@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   private
-  def article_path
-  	params.require(:article).permit(:title, :body, :user_name, :password)
-  end
+	def article_path
+		params.require(:article).permit(:body, :user_name, :password)
+	end
 end
