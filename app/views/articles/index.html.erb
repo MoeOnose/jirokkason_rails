@@ -14,7 +14,7 @@
 		 			
 		 				<% @articles.each do |article| %>
 					<div class="post">
-		 				<%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article) %><br>
+		 				<%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
 		 				<%= article.body %><br>
 		 				<%= article.user_name %><br>
 
@@ -25,7 +25,7 @@
 		 				<% if session[:id] == nil %>
 		 				<%#= binding.pry %>
 		 				<%= link_to article_favorites_path(article_id: article.id), method: :post do %>
-		 				<div class="share_archive"></div>
+		 				<div class="share_archive_fav"></div>
 		 				<% end %>
 		 				<% if article.favorite %>
 		 				<%= article.favorite.count %> 杯
@@ -33,7 +33,7 @@
 
 		 				<% else %>
 		 				<%= link_to article_favorites_path(article_id: article.id), method: :delete do %>
-		 				<div class="share_archive_fav"></div>
+		 				<div class="share_archive"></div>
 		 				<% end %>
 		 				<% if article.favorite %>
 		 				<%= article.favorite.count %> 杯

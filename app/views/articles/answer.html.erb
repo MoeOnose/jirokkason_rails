@@ -30,9 +30,11 @@
 			    			<%= form_for @article do |f|%>
 
 	<%= f.hidden_field :body, :value =>@jiro_copype %>
-	<%= f.text_field :user_name %>
-	<%= f.password_field :password %>
-	<%= f.submit "artcle" %>
+	<p>お名前</p>
+	<%= f.text_field :user_name, class: "form_field" %>
+	<p>削除用パスワード</p>
+	<%= f.password_field :password, class: "form_field" %>
+	<%= f.submit "アーカイブに保存" %>
 
 		<% end -%>
 			    		</div>
