@@ -20,7 +20,9 @@ class FavoritesController < ApplicationController
 
 	private
 		def get_cookie_to_session
-			cookies[:favo_id] = { value: "create_favorite", domain: "http://localhost:3000/", expires: 30.days.from_now, path: "/favorites", secure: false}
-			session[:id] = cookies[:favo_id]
+			unless cookies[:favo_id].presence
+				cookies[:favo_id] = { value: "create_favorite", domain: "http://localhost:3000/", expires: 30.days.from_now, path: "/favorites", secure: false}
+				session[:id] = cookies[:favo_id]
+			end
 		end
 end
