@@ -3,19 +3,15 @@ class FavoritesController < ApplicationController
 	def create
 		@article = Article.find(params[:article_id])
 		@favorite = @article.favorites.build(session_id: session[:id])
-		if @favorite.save
-			redirect_to articles_path
-		else
-			@articles = Article.page(params[:page]).per(3).reverse_order
-			render controller: "articles", action: "index"
-		end
+		@favorite.save
+		@articles = Article.page(params[:page]).per(3).reverse_order
 	end
 
 	def destroy
 		@article = Article.find(params[:article_id])
 		@favorite = Favorite.find_by(article_id: @article.id)
 		@favorite.destroy
-		redirect_to articles_path
+		@articles = Article.page(params[:page]).per(3).reverse_order
 	end
 
 	private
