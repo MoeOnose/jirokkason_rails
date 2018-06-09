@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-  	@articles = Article.page(params[:page]).per(10).reverse_order
+  	@articles = Article.page(params[:page]).per(5).reverse_order
   	@favorite = Favorite.new
   end
 
