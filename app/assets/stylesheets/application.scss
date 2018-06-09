@@ -172,6 +172,7 @@ textarea {
 	background-color: white;
 	color: gray;
 	font-size: 20px;
+	margin: 20px 0;
 }
 
 .blank {
@@ -220,6 +221,10 @@ textarea {
 .menu {
 	padding: 0 100px;
 	text-align: center;
+}
+.answer_menu {
+    padding-bottom: 30px;
+    margin-top: 20px;
 }
 
 .regenerator_2 {
@@ -417,6 +422,10 @@ body {
     display: inline-block;
     width: 100px;
     height: 70px;
+}
+.submit_btn {
+	margin: 10px 20px;
+    padding: 10px 15px;
 }
 
 ul, ol {

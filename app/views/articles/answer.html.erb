@@ -29,7 +29,7 @@
 						<%= f.text_field :user_name, class: "form-control"%><br>
 						<small id="emailHelp" class="form-text text-muted">削除用パスワードを入力してください</small>
 						<%= f.password_field :password, class: "form-control" %>
-						<%= f.submit "投稿",class: "btn btn-dark" %>
+						<%= f.submit "投稿",class: "btn btn-dark pull-right submit_btn" %>
 					<% end -%>
 				</div>
 				<div class="right">
@@ -48,7 +48,7 @@
 		</div>
 		<!---ボタン部分。-->
 		<div class="button">
-			<ul class="menu clearfix">
+			<ul class="menu answer_menu clearfix">
 				<li class="archive"><%= link_to "アーカイブ", articles_path %></li>
 				<li class="regenerator"><%= link_to "TOP", root_path %> </li>
 			</ul>
