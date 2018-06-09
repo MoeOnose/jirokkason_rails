@@ -58,8 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faraday'
 gem 'activerecord-session_store'
 
-
-
+gem 'bootstrap-sass'
 gem 'pry-rails'
 # デバッグ用(当たりついてる時)
 gem 'hirb'
