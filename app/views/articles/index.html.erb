@@ -14,7 +14,7 @@
 			<% @articles.each do |article| %>
 				<div class="post">
 					<p class="index_p">作成日時: </p><%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
-					<p class="index_p">架空の本文: </p><%= article.body %><br>
+					<p class="index_p">架空の本文: </p><%= simple_format(article.body) %><br>
 					<p class="index_p">ニックネーム: </p><%= article.user_name %><br>
 					<!---いいね部分。-->
 					<%= render partial: "favorites/favorite", locals: { article: article } %>
