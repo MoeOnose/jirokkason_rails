@@ -18,7 +18,7 @@
 					<p class="index_p">架空のコピペ本文: </p><%= article.body %><br>
 					<p class="index_p">ニックネーム: </p><%= article.user_name %><br>
 					<!---いいね部分。-->
-					<%= render "favorites/favorite", article: article %>
+					<%= render partial: "favorites/favorite", locals: {article: article} %>
 
 					<!-- モーダル -->
 					<div id="orver">
