@@ -16,6 +16,7 @@
  *= require animate
  *= require font-awesome
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -24,13 +25,16 @@ body,html{
 	background-color: #FFCC33;
 }
 
-h1,h2,h3,h4,h5,h6,p,body {
+h1,h2,h3,h4,h5,h6,body {
 	line-height: 1.77;
 	font-size: 26px;
 	color: #4a4a4a;
 	font-family: sans-serif;
 	margin:  0;
 	padding: 0;
+}
+p{
+	font-size: 22px;
 }
 
 .clearfix:after {
@@ -82,7 +86,7 @@ header hr {
 .page {
     background-color: white;
     padding: 10px 105px;
-    width: 900px;
+    width: 1000px;
     /*height: 90%!important;*/
     margin: 0 auto;
     margin-bottom: 200px !important;
@@ -127,7 +131,7 @@ textarea {
 
 .timeline {
 	background-color:#3333FF;
-	height: auto;
+	// height: auto;
 	margin: 0 auto;
 	margin-bottom: 100px!important;
 	border: 15px solid #000;
@@ -142,7 +146,7 @@ textarea {
 .post {
 	font-size: 16px;
 	margin:30px auto;
-	width: 600px;
+	width: 700px;
 	border: 3px dashed #000;
 	background-color: white;
 }
@@ -154,14 +158,14 @@ textarea {
 
 .post_detail {
 	margin:26px auto;
-	width: 730px;
+	width: 700px;
 	padding-bottom: 30px;
 	border: 3px dashed #000;
 	background-color: white;
 }
 
 .text p {
-	font-size: 25px;
+	font-size: 22px;
 	font-family: sans-serif;
 	text-align: center;
 	background-color: #FFCC33;
@@ -373,8 +377,13 @@ body {
 
 
 
-@media screen and (min-width:768px) { 
-
+@media screen and (max-width: 768px)  { 
+p {
+	font-size: 34px !important;
+}
+.contents_detail {
+	max-height: 700px;
+}
 .text p {
 	margin: 0 0 100px 0;
 	padding: 25px;
@@ -405,11 +414,11 @@ body {
 	margin-top: 100px !important;
 }
 .blank p {
-	font-size: 32px;
+	font-size: 32px  !important;
 }
 .copype_text{
 	padding-top: 50px;
-	font-size: 30px;
+	font-size: 30px !important;
 }
 .share {
 	height: 100px;
@@ -428,11 +437,12 @@ ul, ol {
     padding: 30px 20px;
 }
 }
-@media screen and (min-width:768px) and ( max-width:1024px) {
-    /*　画面サイズが768pxから1024pxまではここを読み込む　*/
 
-}
-@media screen and (min-width:1024px) {
-    /*　画面サイズが1024pxからはここを読み込む　*/
+// @media screen and (min-width:768px) and ( max-width:1024px) {
+//     /*　画面サイズが768pxから1024pxまではここを読み込む　*/
+
+// }
+// @media screen and (min-width:1024px) {
+//     /*　画面サイズが1024pxからはここを読み込む　*/
  
-}
+// }
