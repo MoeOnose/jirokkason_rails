@@ -376,7 +376,36 @@ body {
 }
 
 
-
+/*kaminari*/
+.pagination {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100px;
+ }
+/*active部分の調整*/
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    z-index: 0;
+}
+/*active文字背景色*/
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    color: #3333FF!important;
+    background-color: #FFCC33!important;
+}
+/*文字色*/
+.pagination > li > a {
+    color: #FFCC33!important;
+    background-color: #3333FF;
+    border-color: #FFCC33!important;
+}
+/*ホバー*/
+.pagination a:hover {
+	background-color: #FFCC33!important;
+	color: #3333FF!important;
+}
 
 @media screen and (max-width: 768px)  { 
 p {
