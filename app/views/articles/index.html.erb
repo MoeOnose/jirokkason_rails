@@ -11,14 +11,13 @@
 		<!-- ポスト大枠部分。-->
 		<div class="timeline">
 			<!-- 個別ポスト部分。-->
-			
 			<% @articles.each do |article| %>
 				<div class="post">
-					<p class="index_p">作成時刻: </p><%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
-					<p class="index_p">架空のコピペ本文: </p><%= article.body %><br>
+					<p class="index_p">作成日時: </p><%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
+					<p class="index_p">架空の本文: </p><%= article.body %><br>
 					<p class="index_p">ニックネーム: </p><%= article.user_name %><br>
 					<!---いいね部分。-->
-					<%= render partial: "favorites/favorite", locals: {article: article} %>
+					<%= render partial: "favorites/favorite", locals: { article: article } %>
 
 					<!-- モーダル -->
 					<div id="orver">
@@ -26,8 +25,8 @@
 							<div id="contents">
 								<a id="modal-open" class="button-link">削除</a>
 							</div>
-						</div> 
-					</div> 
+						</div>
+					</div>
 
 					<!-- ここからモーダルウィンドウ -->
 					<div id="modal-content">
@@ -37,13 +36,12 @@
 								<p>削除用のパスワードを入力してください</p>
 								<%= form_tag(article, :url => {:controller => :articles, :action => :destroy}, :method => :delete) do %>
 									<%= text_field_tag :password %>
-									<%= hidden_field_tag :id, value: article.id%>
-									<%= submit_tag "削除"%>
+									<%= hidden_field_tag :id, value: article.id %>
+									<%= submit_tag "削除" %>
 								<% end %>
 								<p><a id="modal-close" class="button-link">閉じる</a></p>
 							</p>
 						</div>
-						<!-- モーダルウィンドウのコンテンツ終了 -->
 					</div>	
 				</div>
 			<% end %>

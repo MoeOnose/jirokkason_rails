@@ -240,23 +240,19 @@ textarea {
 	background-position: 50% 50%;
 }
 
-.share_archive {
+.favo_img {
 	display: inline-block;
 	width: 100px;
 	height: 70px;
-	background-image: url("img_kanin_kora.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
+.share_archive {
+	background-image: url("img_kanin_kora.png");
+}
 .share_archive_fav {
-	display: inline-block;
-	width: 100px;
-	height: 70px;
 	background-image: url("img_syokuzen_kora.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 }
 
 a {

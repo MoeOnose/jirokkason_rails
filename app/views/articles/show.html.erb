@@ -16,9 +16,8 @@
  				<br>
  				<%= @article.body%>
  				<br>
- 				<%= label :user_name, "ユーザー名" %>：
- 				<br>
- 				<%= @article.user_name %>
+ 				<span>ユーザー名: </span><%= @article.user_name %><br>
+				<span>完飲数: </span><span><%= @article.favorites.count %>杯</spanp>
  			</div>
  		</div>
  		<!-- ボタン部分。-->
