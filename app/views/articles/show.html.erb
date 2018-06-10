@@ -14,11 +14,10 @@
 			 	<%= @article.created_at.strftime('%Y.%m.%d')%>
  				<%= label :body, @jiro_copype %>：
  				<br>
- 				<%= @article.body%>
+ 				<%= simple_format(@article.body) %>
  				<br>
- 				<%= label :user_name, "ユーザー名" %>：
- 				<br>
- 				<%= @article.user_name %>
+ 				<span>ユーザー名: </span><%= @article.user_name %><br>
+				<span>完飲数: </span><span><%= @article.favorites.count %>杯</spanp>
  			</div>
  		</div>
  		<!-- ボタン部分。-->
