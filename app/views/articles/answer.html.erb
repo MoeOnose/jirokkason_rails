@@ -16,13 +16,14 @@
 		<!-- -------------tab----------------- -->
 		<div class="tabmenu">
 			<!-- tabボタン部分 -->
-			<ul>
+			<ul class="tab_list">
 				<li id="left" class="selected">アーカイブに保存</li>
 				<li id="right">SNS共有</li>
 			</ul>
 			<!-- テクスト？ -->
 			<div class="tab">
 				<div class="left">
+					
 					<%= form_for @article, :html => { :class => "form-group form-field"} do |f|%>
 						<%= f.hidden_field :body, :value =>@jiro_copype %>
 						<label for="exampleInputEmail1">ニックネーム</label>
@@ -31,10 +32,17 @@
 						<%= f.password_field :password, class: "form-control" %>
 						<%= f.submit "投稿",class: "btn btn-dark pull-right submit_btn" %>
 					<% end -%>
+
+
 				</div>
+
 				<div class="right">
 					<%= link_to "http://twitter.com/home?status=#{url_for(only_path: false)}" do %>
 						<%= fa_icon "twitter", class:"fab fa-twitter-square fa-w-14 fa-5x"%>
+						<span class="blinking">
+							⬅︎ クリックでTwitterに共有せよ
+						</span>
+
 					<% end -%>
 				</div>
 			</div>
