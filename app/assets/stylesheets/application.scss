@@ -159,7 +159,7 @@ textarea {
 
 .post_detail {
 	margin:26px auto;
-	width: 700px;
+	width: 90%;
 	padding-bottom: 30px;
 	border: 3px dashed #000;
 	background-color: white;
@@ -550,6 +550,9 @@ body {
 }
 
 @media screen and (max-width:375px){
+	body{
+		font-size:17px;
+	}
 	.timeline{
 		border: 5px solid #000;
 	}
