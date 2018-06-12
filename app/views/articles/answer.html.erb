@@ -58,10 +58,10 @@
 		<div class="button">
 			<ul class="menu answer_menu clearfix">
 				<li class="archive"><%= link_to "アーカイブ", articles_path %></li>
-				<li class="regenerator"><%= link_to "TOP", root_path %> </li>
+				<li class="regenerator"><%= link_to "もう一度", answer_articles_path %> </li>
 			</ul>
 		</div>
 		<!---いいね部分。-->
-		<div class="share"></div>
+		<%= link_to root_path do %><div class="share"></div><% end %>
 	</div>
 </div>

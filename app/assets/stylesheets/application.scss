@@ -26,7 +26,7 @@ body,html{
 }
 
 h1,h2,h3,h4,h5,h6,body {
-	line-height: 1.77;
+	line-height: 1.45;
 	font-size: 26px;
 	color: #4a4a4a;
 	font-family: sans-serif;
@@ -211,15 +211,15 @@ textarea {
 }
 
 .archive {
-	float: left;
+	float: right;
 }
 
 .generator {
-	float: right;
+	float: left;
 }
 
 .regenerator {
-	float: right;
+	float: left;
 }
 
 .menu {
@@ -456,8 +456,6 @@ body {
 }
 
 
-
-
 @media screen and (max-width:920px){
 	.banner {
 		width: 90%;
@@ -493,7 +491,7 @@ body {
 		margin-bottom: 200px !important;
 	}
 	p {
-		font-size: 20px !important;
+		font-size: 18px !important;
 	}
 	.contents_detail {
 		max-height: 700px;
@@ -504,6 +502,7 @@ body {
 	}
 	.timeline {
 		margin: 100px 0!important;
+		border: 10px solid #000;
 	}
 	.menu {
 		padding-bottom: 50px;
@@ -529,7 +528,7 @@ body {
 		margin-top: 100px !important;
 	}
 	.blank p {
-		font-size: 18px  !important;
+		font-size: 15px  !important;
 	}
 	.copype_text{
 		padding-top: 50px;
@@ -554,6 +553,9 @@ body {
 }
 
 @media screen and (max-width:375px){
+	.timeline{
+		border: 5px solid #000;
+	}
 	.menu li {
 		padding: 0;
 	}
@@ -566,7 +568,7 @@ body {
 		width: 90%;
 	}
 	p {
-		font-size: 20px !important;
+		font-size: 15px !important;
 	}
 	.image {
 		height: 200px;
