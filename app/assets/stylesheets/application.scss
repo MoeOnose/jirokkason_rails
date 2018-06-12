@@ -33,7 +33,8 @@ h1,h2,h3,h4,h5,h6,body {
 	margin:  0;
 	padding: 0;
 }
-p{
+
+p {
 	font-size: 22px;
 }
 
@@ -46,8 +47,7 @@ p{
 
 header {
 	margin-bottom: 50px;
-	// height: 40px;
-	min-width: 960px;
+	// min-width: 960px;
 }
 
 header h1 {
@@ -72,7 +72,7 @@ header hr {
 }
 
 .contents_archive {
-	height:1617px;
+	min-height:1417px;
 }
 
 .contents_detail {
@@ -85,8 +85,8 @@ header hr {
 
 .page {
     background-color: white;
-    padding: 10px 105px;
-    width: 1000px;
+    padding: 10px 75px;
+    width: 80%;
     /*height: 90%!important;*/
     margin: 0 auto;
     margin-bottom: 200px !important;
@@ -146,7 +146,7 @@ textarea {
 .post {
 	font-size: 16px;
 	margin:30px auto;
-	width: 700px;
+	width: 94%;
 	border: 3px dashed #000;
 	background-color: white;
 }
@@ -267,7 +267,7 @@ a {
 footer {
 	bottom: 0;
 	width: 100%;
-	height: 80px;
+	// min-height: 80px;
 	position: fixed;
 }
 
@@ -322,13 +322,14 @@ footer hr {
 
 
 .banner {
-	width: 600px;
-	height: 160px;
+	// // width: 65%;
+	min-height: 100px;
 	background-repeat: no-repeat;
 	background-image: url("banner.PNG");
 	background-size: contain;
 	margin: 0 auto;
-	/*background-position:center;*/
+	background-position:center;
+	line-height: 80px;
 }
 
 /* ここからデモページ用のコード */
@@ -386,7 +387,7 @@ body {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    height: 100px;
+    // height: 100px;
  }
 /*active部分の調整*/
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
@@ -418,8 +419,7 @@ body {
     border-top: 4px solid black!important;
     border-bottom: 4px solid black!important;
     border-right: 2px solid black!important;
-    border-left: 2px solid black!important;
-
+	border-left: 2px solid black!important;
 }
 .pagination > li:first-child > a, .pagination > li > span {
     border-left: 4px solid black!important;
@@ -430,65 +430,120 @@ body {
 
 
 
-@media screen and (max-width: 768px)  { 
-p {
-	font-size: 34px !important;
-}
-.contents_detail {
-	max-height: 700px;
-}
-.text p {
-	margin: 0 0 100px 0;
-	padding: 25px;
-}
-.timeline {
-	margin: 100px 0!important;
-}
-.menu {
-	padding-bottom: 150px;
-}
-.menu li {
-	padding: 10px 20px;
-}
-.image {
-	height: 450px;
-    padding-top: 0;
-    background-size: 700px 600px;
-    margin: 0 0 30px 0;
-}
-.form-group {
-    margin-top: 20px;
-}
-.form-field {
-    width: 550px;
-    margin: 0 auto;
-}
-.page {
-	margin-top: 100px !important;
-}
-.blank p {
-	font-size: 32px  !important;
-}
-.copype_text{
-	padding-top: 50px;
-	font-size: 30px !important;
-}
-.share {
-	height: 100px;
-    margin-bottom: 50px;
-}
-.submit_btn {
-	margin: 10px 20px;
-    padding: 10px 15px;
+
+@media screen and (max-width:920px){
+	.banner {
+		width: 90%;
+		min-height: 90px;
+	}
+	.archive, .generator, .regenerator {
+		// width: 100%;
+		float: none;
+	}
+	.page {
+		padding: 10px 55px;
+		width: 70%;
+	}
+	.menu {
+		padding: 0;
+	}
 }
 
-ul, ol {
-    margin-top: 50px;
+@media screen  and (max-width: 768px)  { 
+	.banner {
+		width: 90%;
+		min-height: 70px;
+	}
+	.page {
+		background-color: white;
+		padding: 10px 65px;
+		width: 85%;
+		/*height: 90%!important;*/
+		margin: 0 auto;
+		margin-bottom: 200px !important;
+	}
+	p {
+		font-size: 20px !important;
+	}
+	.contents_detail {
+		max-height: 700px;
+	}
+	.text p {
+		margin: 0 0 100px 0;
+		padding: 25px;
+	}
+	.timeline {
+		margin: 100px 0!important;
+	}
+	.menu {
+		padding-bottom: 50px;
+	}
+	.menu li {
+		padding: 10px 20px;
+	}
+	.image {
+		height: 260px;
+		padding-top: 0;
+		background-size: 300px 200px;
+		// margin: 0 0 30px 0;
+	}
+	.form-group {
+		margin-top: 20px;
+	}
+	.form-field {
+		// width: 550px;
+		margin: 0 auto;
+	}
+	.page {
+		padding: 10px 35px;
+		margin-top: 100px !important;
+	}
+	.blank p {
+		font-size: 18px  !important;
+	}
+	.copype_text{
+		padding-top: 50px;
+		font-size: 22px !important;
+	}
+	.share {
+		height: 100px;
+		margin-bottom: 50px;
+	}
+	.submit_btn {
+		margin: 10px 20px;
+		padding: 10px 15px;
+	}
+
+	ul, ol {
+		margin-top: 50px;
+	}
+	.post_detail {
+		// width: 550px;
+		padding: 30px 20px;
+	}
 }
-.post_detail {
-	width: 550px;
-    padding: 30px 20px;
-}
+
+@media screen and (max-width:375px){
+	.menu li {
+		padding: 0;
+	}
+	.banner {
+		width: 100%;
+		min-height: 50px;
+	}
+	.page {
+		padding: 4px 15px;
+		width: 90%;
+	}
+	p {
+		font-size: 20px !important;
+	}
+	.image {
+		height: 200px;
+		padding-top: 0;
+		background-size: 250px 170px;
+	}
+
 }
 
 // @media screen and (min-width:768px) and ( max-width:1024px) {
