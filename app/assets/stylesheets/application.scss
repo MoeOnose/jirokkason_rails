@@ -292,7 +292,7 @@ footer hr {
 	// width: 120px;
 	padding: 10px 10px 5px;
 	cursor: pointer;
-	background-color: #4a4a4a;
+	background-color: black;
 	border-top-right-radius: 10px;
 	font-size: 14px;
 	color: #fff;
@@ -300,14 +300,17 @@ footer hr {
 }
 
 .tabmenu li .selected {
-	background-color: #fff;
-	color: #AECD6A;
 }
-
-.tab{
-	background-color: #fff;
-	/*height: 360px;*/
-	padding: 20px;
+ul.tab_list {
+    margin-bottom: -1px;
+}
+ul.tab_list li {
+	color: #FFCC33;
+}
+.tab {
+    background-color: #FFCC33;
+    padding: 20px;
+    border: 5px solid black;
 }
 
 .tab .right {
@@ -321,6 +324,26 @@ footer hr {
 }
 
 
+/* 点滅 */
+.blinking{
+	-webkit-animation:blink 0.8s ease-in-out infinite alternate;
+    -moz-animation:blink 0.8s ease-in-out infinite alternate;
+    animation:blink 0.8s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+
 .banner {
 	width: 600px;
 	height: 160px;
@@ -330,6 +353,7 @@ footer hr {
 	margin: 0 auto;
 	/*background-position:center;*/
 }
+
 
 /* ここからデモページ用のコード */
 body {
