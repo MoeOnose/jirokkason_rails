@@ -12,42 +12,34 @@
 		<div class="timeline">
 			<!-- 個別ポスト部分。-->
 			<% @articles.each do |article| %>
-				<div class="post">
-					<p class="index_p">作成日時: </p><%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
-					<p class="index_p">架空の本文: </p><%= simple_format(article.body) %><br>
-					<p class="index_p">ニックネーム: </p><%= article.user_name %><br>
-					<!---いいね部分。-->
-					<%= render partial: "favorites/favorite", locals: { article: article } %>
+			<div class="post">
+				<p class="index_p">作成日時: </p><%=link_to article.created_at.strftime('%Y.%m.%d'), article_path(article.id) %><br>
+				<p class="index_p">架空の本文: </p><%= simple_format(article.body) %><br>
+				<p class="index_p">ニックネーム: </p><%= article.user_name %><br>
+				<!---いいね部分。-->
+				<%= render partial: "favorites/favorite", locals: { article: article } %>
 
-					<!-- モーダル -->
-					<div id="orver">
-						<div id="wrap">
-							<div id="contents">
-								<a id="modal-open" class="button-link">削除</a>
-							</div>
-						</div>
-					</div>
+				<!-- モーダル -->
+				<a data-target="<%= article.id %>" class="modal-open">削除</a>
 
-					<!-- ここからモーダルウィンドウ -->
-					<div id="modal-content">
-						<div id="modal-content-innar">
-							<!-- モーダルウィンドウのコンテンツ開始 -->
-							<p class="red bold">
-								<p>削除用のパスワードを入力してください</p>
-								<%= form_tag(article, :url => {:controller => :articles, :action => :destroy}, :method => :delete) do %>
-									<%= text_field_tag :password %>
-									<%= hidden_field_tag :id, value: article.id %>
-									<%= submit_tag "削除" %>
-								<% end %>
-								<p><a id="modal-close" class="button-link">閉じる</a></p>
-							</p>
-						</div>
-					</div>	
+				<div id="<%= article.id %>" class="modal-content">
+
+					<p>削除用のパスワードを入力してください</p>
+					<%= form_tag(article, :url => {:controller => :articles, :action => :destroy}, :method => :delete) do %>
+					<%= text_field_tag :password %>
+					<%= hidden_field_tag :id, value: article.id %>
+					<%= submit_tag "削除" %>
+					<% end %>
+					<p><a class="modal-close">閉じる</a></p>
+
 				</div>
+
+			</div>
 			<% end %>
 			<%= paginate @articles %>
 		</div>
-	<!-- ボタン部分。-->
+
+		<!-- ボタン部分。-->
 		<div class="button">
 			<ul class="menu clearfix">
 				<li>
