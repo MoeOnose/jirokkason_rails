@@ -458,6 +458,15 @@ ul.tab_list li {
 	h1,h2,h3,h4,h5,h6{
 		font-size: 18px;
 	}
+	.timeline_detail {
+    margin: 0 auto 50px;
+	}
+	.post_detail {
+		width: 90%;
+	}
+	.tab .right {
+    font-size: 20px;
+	}
 }
 
 @media screen  and (max-width: 768px)  { 
@@ -532,6 +541,9 @@ ul.tab_list li {
 		// width: 550px;
 		padding: 30px 20px;
 	}
+	.blinking {
+		font-size: 20px;
+	}
 }
 
 @media screen and (max-width:375px){
@@ -554,7 +566,18 @@ ul.tab_list li {
 		padding-top: 0;
 		background-size: 250px 170px;
 	}
+	.fa-twitter:before {
+    font-size: 70px;
+	}
+	label {
+		font-size: 20px;
+		color: #000000;
+	}
+	.text-muted{
+		font-size: 13px!important;
+		color: #3c3b3b;
 
+	}
 }
 
 // @media screen and (min-width:768px) and ( max-width:1024px) {
