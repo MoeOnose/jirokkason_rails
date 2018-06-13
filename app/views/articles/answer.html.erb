@@ -28,7 +28,7 @@
 						<%= f.hidden_field :body, :value =>@jiro_copype %>
 						<label for="exampleInputEmail1">ニックネーム</label>
 						<%= f.text_field :user_name, class: "form-control"%><br>
-						<small id="emailHelp" class="form-text text-muted">削除用パスワードを入力してください</small>
+						<p class="form-text text-muted">削除用パスワードを入力してください</p>
 						<%= f.password_field :password, class: "form-control" %>
 						<%= f.submit "投稿",class: "btn btn-dark pull-right submit_btn" %>
 					<% end -%>
@@ -38,7 +38,7 @@
 
 				<div class="right">
 					<%= link_to "http://twitter.com/home?status=#{url_for(only_path: false)}" do %>
-						<%= fa_icon "twitter", class:"fab fa-twitter-square fa-w-14 fa-5x"%>
+						<%= fa_icon "twitter", class: "fab fa-twitter-square fa-w-14 fa-5x"%>
 						<span class="blinking">
 							⬅︎ クリックでTwitterに共有せよ
 						</span>
