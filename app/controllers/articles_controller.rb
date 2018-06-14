@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   	article = Article.find(params[:id])
   	if article.password == params[:password]
   		article.delete
-  		redirect_to root_path
+  		redirect_to articles_path
   	else
   		@articles = Article.page(params[:page]).per(3).reverse_order
   		render 'index'

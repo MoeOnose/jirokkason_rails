@@ -303,7 +303,9 @@ footer hr {
 .tabmenu li .selected {
 }
 ul.tab_list {
-    margin-bottom: -1px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0px;
 }
 ul.tab_list li {
 	color: #FFCC33;
@@ -312,6 +314,8 @@ ul.tab_list li {
     background-color: #FFCC33;
 	padding: 20px 10px 60px 10px;
     border: 5px solid black;
+    width: 80%;
+    margin: -1px auto;
 }
 
 .tab .right {
@@ -356,51 +360,28 @@ ul.tab_list li {
 	line-height: 80px;
 }
 
-
-/* ここからデモページ用のコード */
-body {
- width: 100%;
- padding: 0;
+/*フォーム*/
+.form-group {
+    width: 60%;
+    margin: 0 auto;
 }
-/* ここまでデモページ用のコード */
- 
-#modal-content {
- width: 50%;
- margin: 0;
- padding: 10px 20px;
- border: 2px solid #aaa;
- background: #fff;
- position: fixed;
- display: none;
- z-index: 999;
-}
- 
-#modal-content-innar{
- margin:0 auto;
- width:80%;
-}
-  
-#modal-overlay {
- z-index: 1;
- display: none;
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 120%;
- background-color: rgba( 0,0,0, 0.75 );
-}
- 
-.button-link {
- color: #00f;
- text-decoration: underline;
-}
- 
-.button-link:hover {
- cursor: pointer;
- color: #f00;
+.form-control {
+    border: 3px solid #000000;
+    border-radius: 0px;
+    height: 40px;
 }
 
+.btn {
+    background-color: #000000;
+    color: #FFCC33;
+    margin: 8px 15px;
+    border-radius: 0px;
+}
+.btn:hover {
+	background-color: #FFCC33;
+    color: #000000;
+    border: 3px solid #000000;
+}
 
 
 /*kaminari*/
@@ -476,6 +457,15 @@ body {
 	h1,h2,h3,h4,h5,h6{
 		font-size: 18px;
 	}
+	.timeline_detail {
+    margin: 0 auto 50px;
+	}
+	.post_detail {
+		width: 90%;
+	}
+	.tab .right {
+    font-size: 20px;
+	}
 }
 
 @media screen  and (max-width: 768px)  { 
@@ -550,6 +540,9 @@ body {
 		// width: 550px;
 		padding: 30px 20px;
 	}
+	.blinking {
+		font-size: 20px;
+	}
 }
 
 @media screen and (max-width:375px){
@@ -578,6 +571,16 @@ body {
 		padding-top: 0;
 		background-size: 250px 170px;
 	}
+	.fa-twitter:before {
+    font-size: 70px;
+	}
+	label {
+		font-size: 20px;
+		color: #000000;
+	}
+	.text-muted{
+		font-size: 13px!important;
+		color: #3c3b3b;}
 	.timeline_detail{
 		border: 5px solid #000;
 	}
@@ -592,3 +595,47 @@ body {
 //     /*　画面サイズが1024pxからはここを読み込む　*/
  
 // }
+
+
+/*モーダル*/
+.modal-content {
+    position:fixed;
+    display:none;
+    z-index:2;
+    width:50%;
+    margin:0;
+    padding:10px 20px;
+    border:2px solid #aaa;
+    background:#fff;
+}
+
+.modal-content p {
+    margin:0;
+    padding:0;
+}
+.modal-overlay {
+    z-index:1;
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:120%;
+    background-color:rgba(0,0,0,0.75);
+}
+.modal-open {
+    color:#00f;
+    text-decoration:underline;
+}
+.modal-open:hover {
+    cursor:pointer;
+    color:#f00;
+}
+.modal-close {
+    color:#00f;
+    text-decoration:underline;
+}
+.modal-close:hover {
+    cursor:pointer;
+    color:#f00;
+}
