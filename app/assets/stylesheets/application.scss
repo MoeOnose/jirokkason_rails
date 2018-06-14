@@ -270,6 +270,7 @@ footer {
 	width: 100%;
 	// min-height: 80px;
 	position: fixed;
+	margin-bottom: -3px;
 }
 
 footer hr {
@@ -356,7 +357,7 @@ ul.tab_list li {
 	background-image: url("banner.PNG");
 	background-size: contain;
 	margin: 0 auto;
-	background-position:center;
+	background-position: bottom;
 	line-height: 80px;
 }
 
@@ -591,7 +592,13 @@ ul.tab_list li {
 	input#password {
     width: 80%;
     margin: 0 auto;
-}
+	}
+	ul.tab_list li {
+    font-size: 10px;
+	}
+	.tabmenu li {
+    padding: 5px;
+	}
 
 }
 
