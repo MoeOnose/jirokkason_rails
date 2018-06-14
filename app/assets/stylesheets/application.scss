@@ -543,6 +543,10 @@ ul.tab_list li {
 	.blinking {
 		font-size: 20px;
 	}
+	input#password {
+    width: 80%;
+    margin: 0 auto;
+}
 }
 
 @media screen and (max-width:375px){
@@ -584,6 +588,10 @@ ul.tab_list li {
 	.timeline_detail{
 		border: 5px solid #000;
 	}
+	input#password {
+    width: 80%;
+    margin: 0 auto;
+}
 
 }
 
